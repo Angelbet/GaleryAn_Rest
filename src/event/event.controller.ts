@@ -84,7 +84,8 @@ export class EventController extends TimeMs {
                 return
             }
 
-
+            res.status(HttpStatus.OK).json(EstructResponse.ok(DescriptionMessageResponse.OK(), { saved }))
+            this.debug.log(super.getTimeValidation())
 
         } catch (error) {
             Log.debug(error.message, error)

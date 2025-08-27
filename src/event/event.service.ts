@@ -22,6 +22,8 @@ export class EventService extends TimeMs {
                 method: 'POST',
             })
 
+            Log.debug('response: ', response)
+            
             if (!response.data.saved) {
                 Log.debug('fallo al registrar datos', data)
                 Log.debug(super.getClazzName('addEvent'))
