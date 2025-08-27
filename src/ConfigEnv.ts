@@ -9,6 +9,8 @@ export default () => ({
         galeryan: process.env.URI_RS_DB_GALERYAN,
         token_valid: process.env.URI_TOKEN_VALID,
         gln_fill_info_event: process.env.URI_RS_DB_GLN_FILL_INFO_EVENT,
+        db_modifid_events: process.env.URI_RS_DB_GLN_MODIFID_EVENTS,
+        db_modifid_categories: process.env.URI_RS_DB_GLN_MODIFID_CATEGORIES,
         concat
     }
 })

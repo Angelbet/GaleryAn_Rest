@@ -5,7 +5,7 @@ const debug = (message: string, any: any = null): void => {
 
 // ASSIGNMENTING FUNCTIONS TO EXPORT
 const Log = {
-    debug
+    debug,
 }
 
 export default Log

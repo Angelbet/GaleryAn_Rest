@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import ConfigEnv from './ConfigEnv';
 import { HttpModule } from '@nestjs/axios';
 import { GaleryanModule } from './galeryan/galeryan.module';
+import { EventModule } from './event/event.module';
 
 @Module({
   imports: [
@@ -15,6 +16,8 @@ import { GaleryanModule } from './galeryan/galeryan.module';
     HttpModule,
 
     GaleryanModule,
+
+    EventModule,
   ],
   controllers: [AppController],
   providers: [AppService],

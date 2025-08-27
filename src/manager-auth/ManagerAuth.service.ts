@@ -14,15 +14,23 @@ export class ManagerAuthService extends TimeMs {
         super("ManagerAuthService")
     }
 
-    async isValidToken(token: string): Promise<ITokenData> {
+    async isValidToken(token: string): Promise<ITokenData> | null {
         try {
             token = this.extractTokenFromHeader(token);
             const url = ConfigEnv().qa.token_valid
             const resData = await this.axios.axiosRef.post(url, { token })
 
             const response: IResponseDatabase = resData.data
+            const tokenData: ITokenData = response.data
 
-            return response.data
+            if (!tokenData) {
+                Log.debug('token invalido', { tokenData })
+                Log.debug(super.getTimeValidation())
+                // res.status(HttpStatus.BAD_REQUEST).json(EstructResponse.error(DescriptionMessageResponse.ERROR, null))
+                return null
+            }
+            
+            return tokenData
             
         } catch (error) {
             Log.debug(error.message, error)
